@@ -8,12 +8,24 @@ using System.Data.SqlClient;
 namespace MaintenanceLog.Pages
 {
 
+    public class CalebEmailAddressAttribute : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (value is string email && email.Contains("@calebuniversity", StringComparison.OrdinalIgnoreCase))
+            {
+                return ValidationResult.Success;
+            }
 
+            return new ValidationResult("The email address must be a school email address");
+        }
+    }
     [RequireNoAuth]
     [BindProperties]
     public class IndexModel : PageModel
     {
-        [Required(ErrorMessage = "The Email is required"), EmailAddress]
+        [Required(ErrorMessage = "The Email is required")]
+        [CalebEmailAddress(ErrorMessage = "The email address must end with @caleb.")]
         public string Email { get; set; } = "";
 
         [Required(ErrorMessage = "Password is required")]

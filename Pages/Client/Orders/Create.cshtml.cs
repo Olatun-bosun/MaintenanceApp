@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace BestShop.Pages.Client.Orders
 {
-    [RequireAuth(RequiredRole = "client")]
+    //[RequireAuth(RequiredRole = "client")]
 
     public class CreateModel : PageModel
 

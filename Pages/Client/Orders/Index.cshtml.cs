@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace MaintenanceLog.Pages.Client.Orders
 {
-    [RequireAuth(RequiredRole = "client")]
+    //[RequireAuth(RequiredRole = "client")]
     public class IndexModel : PageModel
     {
         public List<ComplainInfo> listComplains = new List<ComplainInfo>();
