@@ -1,0 +1,60 @@
+﻿@page
+@model MaintenanceLog.Pages.Client.Orders.IndexModel
+@{
+}
+
+<h3 class="rounded p-2 my-2 text-white text-center" style="background-color: #08618d;">List of Complains</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Utility</th>
+            <th>Room</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var order in Model.listComplains)
+        {
+
+            <tr>
+                <td>@order.id</td>
+                <td>@order.utilities</td>
+                <td>@order.room</td>
+                <td>@order.description</td>
+
+                @if (order.Status.Equals("ACCEPTED"))
+                {
+                    <td><span class="badge bg-success">@order.Status</span></td>
+                }
+                else
+                {
+                    <td><span class="badge bg-warning text-dark">@order.Status</span></td>
+                }
+
+                <td>@order.CreatedAt</td>
+
+
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Client/Orders/Details?id=@order.id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.totalPages; i++)
+        {
+            <li class="page-item"><a class="page-link" href="?page=@(i)">@i</a></li>
+        }
+    </ul>
+</nav>
+
