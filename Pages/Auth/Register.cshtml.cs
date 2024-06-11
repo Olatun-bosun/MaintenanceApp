@@ -7,6 +7,19 @@ using System.Data.SqlClient;
 
 namespace MaintenanceLog.Pages.Auth
 {
+    public class CalebEmailAddressAttribute : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (value is string email && email.Contains("@calebuniversity", StringComparison.OrdinalIgnoreCase))
+            {
+                return ValidationResult.Success;
+            }
+
+            return new ValidationResult("The email address must be a school email address");
+        }
+    }
+
     [RequireNoAuth]
     [BindProperties]
     public class RegisterModel : PageModel
@@ -17,7 +30,8 @@ namespace MaintenanceLog.Pages.Auth
         [Required(ErrorMessage = "The Last Name is required")]
         public string Lastname { get; set; } = "";
 
-        [Required(ErrorMessage = "The Email is required"), EmailAddress]
+        [Required(ErrorMessage = "The Email is required")]
+        [CalebEmailAddress(ErrorMessage = "The email address must end with @caleb.")]
         public string Email { get; set; } = "";
 
         public string? Phone { get; set; } = "";
