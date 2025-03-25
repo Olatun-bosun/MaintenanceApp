@@ -8,11 +8,11 @@ using System.Data.SqlClient;
 namespace MaintenanceLog.Pages
 {
 
-    public class CalebEmailAddressAttribute : ValidationAttribute
+    public class BabcockEmailAddressAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (value is string email && email.Contains("@calebuniversity", StringComparison.OrdinalIgnoreCase))
+            if (value is string email && email.Contains("@babcockuniversity", StringComparison.OrdinalIgnoreCase))
             {
                 return ValidationResult.Success;
             }
@@ -25,7 +25,7 @@ namespace MaintenanceLog.Pages
     public class IndexModel : PageModel
     {
         [Required(ErrorMessage = "The Email is required")]
-        [CalebEmailAddress(ErrorMessage = "The email address must end with @caleb.")]
+        [BabcockEmailAddress(ErrorMessage = "The email address must end with @babcock.")]
         public string Email { get; set; } = "";
 
         [Required(ErrorMessage = "Password is required")]
@@ -57,7 +57,7 @@ namespace MaintenanceLog.Pages
             // connect to database and check the user credentials
             try
             {
-                string connectionString = "Data Source=LAPTOP-HTBOKT77;Initial Catalog=MaintenanceLogDb;User ID=Arise;Password=2004Bos16..;Encrypt=False";
+                string connectionString = "Data Source=OLATUNBOSUN\\OLATUNBOSUN;Initial Catalog=MaintenanceLogDb;User ID=sa;Password=2004Bos16..;Encrypt=False";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();

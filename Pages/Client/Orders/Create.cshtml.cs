@@ -38,7 +38,7 @@ namespace BestShop.Pages.Client.Orders
         {
             try
             {
-                string connectionString = "Data Source=LAPTOP-HTBOKT77;Initial Catalog=MaintenanceLogDb;User ID=Arise;Password=2004Bos16..;Encrypt=False";
+                string connectionString = "Data Source=OLATUNBOSUN\\OLATUNBOSUN;Initial Catalog=MaintenanceLogDb;User ID=sa;Password=2004Bos16..;Encrypt=False";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -90,7 +90,7 @@ namespace BestShop.Pages.Client.Orders
             }
             try
             {
-                string connectionString = "Data Source=LAPTOP-HTBOKT77;Initial Catalog=MaintenanceLogDb;User ID=Arise;Password=2004Bos16..;Encrypt=False";
+                string connectionString = "Data Source=OLATUNBOSUN\\OLATUNBOSUN;Initial Catalog=MaintenanceLogDb;User ID=sa;Password=2004Bos16..;Encrypt=False";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

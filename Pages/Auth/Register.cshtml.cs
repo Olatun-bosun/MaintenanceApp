@@ -7,11 +7,11 @@ using System.Data.SqlClient;
 
 namespace MaintenanceLog.Pages.Auth
 {
-    public class CalebEmailAddressAttribute : ValidationAttribute
+    public class BabcockEmailAddressAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (value is string email && email.Contains("@calebuniversity", StringComparison.OrdinalIgnoreCase))
+            if (value is string email && email.Contains("@babcockuniversity", StringComparison.OrdinalIgnoreCase))
             {
                 return ValidationResult.Success;
             }
@@ -31,7 +31,7 @@ namespace MaintenanceLog.Pages.Auth
         public string Lastname { get; set; } = "";
 
         [Required(ErrorMessage = "The Email is required")]
-        [CalebEmailAddress(ErrorMessage = "The email address must end with @caleb.")]
+        [BabcockEmailAddress(ErrorMessage = "The email address must end with @babcock.")]
         public string Email { get; set; } = "";
 
         public string? Phone { get; set; } = "";
@@ -73,7 +73,7 @@ namespace MaintenanceLog.Pages.Auth
             if (Phone == null) Phone = "";
 
             // add the user details to the database
-            string connectionString = "Data Source=LAPTOP-HTBOKT77;Initial Catalog=MaintenanceLogDb;User ID=Arise;Password=2004Bos16..;Encrypt=False";
+            string connectionString = "Data Source=OLATUNBOSUN\\OLATUNBOSUN;Initial Catalog=MaintenanceLogDb;User ID=sa;Password=2004Bos16..;Encrypt=False";
 
             try
             {

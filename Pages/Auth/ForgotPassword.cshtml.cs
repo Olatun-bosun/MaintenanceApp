@@ -30,7 +30,7 @@ namespace MaintenanceLog.Pages.Auth
             // 1) create token, 2) save token in the database, 3) send token by email to the user
             try
             {
-                string connectionString = "Data Source=LAPTOP-HTBOKT77;Initial Catalog=Best;User ID=Arise;Password=2004Bos16..;Encrypt=False";
+                string connectionString = "Data Source=OLATUNBOSUN\\OLATUNBOSUN;Initial Catalog=Best;User ID=sa;Password=2004Bos16..;Encrypt=False";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -86,7 +86,7 @@ namespace MaintenanceLog.Pages.Auth
         {
             try
             {
-                string connectionString = "Data Source=LAPTOP-HTBOKT77;Initial Catalog=Best;User ID=Arise;Password=2004Bos16..;Encrypt=False";
+                string connectionString = "Data Source=OLATUNBOSUN\\OLATUNBOSUN;Initial Catalog=Best;User ID=sa;Password=2004Bos16..;Encrypt=False";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

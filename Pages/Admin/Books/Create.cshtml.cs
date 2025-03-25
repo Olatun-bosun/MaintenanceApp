@@ -71,7 +71,7 @@ namespace MaintenanceLog.Pages.Admin.Books
             // save the new book in the database
             try
             {
-                string connectionString = "Data Source=LAPTOP-HTBOKT77;Initial Catalog=MaintenanceLogDb;User ID=Arise;Password=2004Bos16..;Encrypt=False";
+                string connectionString = "Data Source=OLATUNBOSUN\\OLATUNBOSUN;Initial Catalog=MaintenanceLogDb;User ID=sa;Password=***********;Encrypt=False";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
